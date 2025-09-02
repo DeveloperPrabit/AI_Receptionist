@@ -3,7 +3,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import EmailMessage, EmailThread
 from .serializers import EmailMessageSerializer, EmailThreadSerializer
-from .tasks import fetch_emails
+from .tasks import process_incoming_email
+
+
 
 class EmailMessageListView(generics.ListAPIView):
     serializer_class = EmailMessageSerializer
